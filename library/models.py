@@ -4,7 +4,7 @@ def user_directory_path(instance, filename):
     return 'books/{0}/{1}'.format(instance.book, filename)
 
 class Author(models.Model):
-    first_name = models.CharField(max_length=30)
+    first_name = models.CharField(max_length=30, blank=True, null=True)
     last_name = models.CharField(max_length=30)
 
     def completeName(self):
@@ -23,8 +23,6 @@ class Editorial(models.Model):
 
 
 class Book(models.Model):
-    code = models.CharField(primary_key=True, max_length=19)
-
     book = models.CharField(max_length=50)
 
     price = models.PositiveSmallIntegerField()
@@ -41,19 +39,20 @@ class Book(models.Model):
         ('AD', 'Adventure'),
         ('DR', 'Drama'),
         ('HU', 'Humor'),
+        ('SC', 'Science'),
         ('SF', 'Science Fiction'),
         ('MY', 'Mythology'),
         ('NO', 'Novel'),
         ('PO', 'Poetry'),        
         ('RO', 'Romantic'),
-        ('SC', 'Science'),
         ('OT', 'Others'),
     ]
     
-   
-    genre = models.CharField(max_length=20, choices=genres, default='Others')
+    genre = models.CharField(max_length=2, choices=genres, default='Others')
 
-    published = models.DateField(default='2022-05-12')
+    published = models.DateField(default='2000-04-23', blank=True, null=True)
+
+    code = models.CharField(primary_key=True, max_length=19) #Code in Final for a Better UX
 
     def __str__(self):
         text = "{0} | By {1}"
