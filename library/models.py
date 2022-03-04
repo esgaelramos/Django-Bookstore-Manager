@@ -43,8 +43,10 @@ class Book(models.Model):
         ('SF', 'Science Fiction'),
         ('MY', 'Mythology'),
         ('NO', 'Novel'),
+        ('PH', 'Philosophy'),        
         ('PO', 'Poetry'),        
         ('RO', 'Romantic'),
+        ('TE', 'Terror'),
         ('OT', 'Others'),
     ]
     
