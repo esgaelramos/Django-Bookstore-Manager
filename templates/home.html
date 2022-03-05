@@ -8,79 +8,19 @@
 {% block content %}
 
     <h1>THE BOOKSTORE NEFEMA</h1>
-
     {% comment %} {% include 'partials/_why.html' %} {% endcomment %}
-
     <div class="books_container">
-        <div class="add">
-            <h1>Gestión de Libros</h1>
-            <div class="card">
-                <div class="card-body">
-                    <form action="/registerBook/" method="POST">{% csrf_token %}
-                        <div class="form-group">
-                            <input type="text" name="txtCode" class="form-control" placeholder="Código" maxlength="19" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="txtBook" class="form-control" placeholder="Libro" maxlength="50" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="number" name="numPrice" class="form-control" placeholder="Precio" min="19" value="99" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Autor:</label>
-                            <select class="form-control" name="txtAuthor">
-                                {% for author in authors %}   
-                                    <option>{{ author }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Editorial:</label>
-                            <select class="form-control" name="txtEditorial">
-                                {% for editorial in editorials %}   
-                                    <option value="{{ editorial.id }}">{{ editorial }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="file" accept="image/png,image/jpeg,image/svg+xml," name="fileThumbnail" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="txtSlug" class="form-control" placeholder="Slug / Url" maxlength="70">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Género:</label>
-                            <select class="form-control" name="txtGenre">
-                                {% for book in books %}   
-                                    <option>{{ book.genre }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="date" name="datePublished">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="boton-registrar">Registrar Libro</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    
         <div class="table">
-            <form method="GET">
-                <div class="input-grup">
-                    <input type="text" placeholder="Buscar" name="buscar">
-                    <button type="submit"> 
-                        Buscar
-                    </button>
-                </div>
-
-            </form>
-
-
-
-
+            <div class="searcher">
+                <form method="GET">
+                    <div class="input-grup">
+                        <input type="text" placeholder="Buscar" name="buscar">
+                        <button type="submit"> 
+                            Buscar
+                        </button>
+                    </div>
+                </form>    
+            </div>
             <h1>Listado de Libros</h1>
             <table>
                 <thead>
@@ -115,18 +55,4 @@
             </table>
         </div>
     </div>
-
-    <div id="appCreta">
-        <span>((( kname )))</span>
-    </div>
-
-
-
-
-
-
-
-
-
-
 {% endblock %}
