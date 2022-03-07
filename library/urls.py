@@ -5,7 +5,7 @@ from django.urls import path
 app_name='library'
 
 urlpatterns = [
-    # path('', views.home, name='home'),
+    path('', views.home, name='home'),
 
     # path('hello-world', views.HelloWorld, name='hello-world'),
 ]
