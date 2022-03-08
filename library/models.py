@@ -50,7 +50,7 @@ class Book(models.Model):
         ('OT', 'Others'),
     ]
     
-    genre = models.CharField(max_length=2, choices=genres, default='Others')
+    genre = models.CharField(max_length=20, choices=genres, default='Others')
 
     published = models.DateField(default='2000-04-23', blank=True, null=True)
 

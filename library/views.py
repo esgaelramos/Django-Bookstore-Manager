@@ -21,3 +21,8 @@ def home(request):
 
     return render(request, 'home.html', {'books': booksList, 'authors': authorsList, 'editorials': editorialsList})
 
+def deleteBook(request, code):
+    book = Book.objects.get(code=code)
+    book.delete()
+    
+    return redirect('/')
