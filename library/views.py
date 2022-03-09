@@ -1,6 +1,13 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Book, Author, Editorial
 from django.db.models import Q #for consultes
+
+#WE USE APIVIEW
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
+from .serializers import PostSerializer
+
 
 def home(request):
     search = request.GET.get('buscar') #recuperamos la vista
@@ -26,3 +33,19 @@ def deleteBook(request, code):
     book.delete()
     
     return redirect('/')
+
+
+
+class BooksListView(APIView):
+    def get(self, request, *args, **kwargs):
+        books = Book.objects.all()[0:4]
+        serializer = PostSerializer(books, many=True)
+
+        return Response(serializer.data)
+
+class BookDetailView(APIView):
+    def get(self, request, book_slug, *args, **kwargs):
+        book = get_object_or_404(Book, slug=book_slug)
+        serializer = PostSerializer(book)
+
+        return Response(serializer.data)
