@@ -38,7 +38,7 @@ def deleteBook(request, code):
 
 class BooksListView(APIView):
     def get(self, request, *args, **kwargs):
-        books = Book.objects.all()[0:4]
+        books = Book.objects.all()[0:140]
         serializer = PostSerializer(books, many=True)
 
         return Response(serializer.data)
