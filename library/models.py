@@ -56,6 +56,9 @@ class Book(models.Model):
 
     code = models.CharField(primary_key=True, max_length=19) #Code in Final for a Better UX
 
+    class Meta:
+        ordering = ('-author',)
+
     def __str__(self):
         text = "{0} | By {1}"
         return text.format(self.book, self.author)
