@@ -7,7 +7,6 @@
 
 {% block content %}
 
-    <h1>THE BOOKSTORE NEFEMA</h1>
     {% comment %} {% include 'partials/_why.html' %} {% endcomment %}
     <div class="books_container">
         <div class="table">
@@ -43,11 +42,11 @@
                         <td>{{ book.code }}</td>
                         <td id="table-nombre">{{ book.book }}</td>
                         <td>{{ book.author }}</td>
-                        <td>{{ book.price }}</td>
+                        <td>${{ book.price }}</td>
                         <td>{{ book.editorial }}</td>
                         <td>{{ book.genre }}</td>
                         <td>{{ book.published }}</td>
-                        <td><a href="editBook/{{ book.code }}" class="btn btn-info">Editar</a></td>
+                        <td><a href="admin/library/book/{{ book.code }}/change/" class="btn btn-info">Editar</a></td>
                         <td><a href="deleteBook/{{ book.code }}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
                     </tr>    
                     {% endfor %}

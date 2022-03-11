@@ -1,0 +1,34 @@
+<header>
+    <div class="header__container" id="header_navbar">
+        <div class="header-title">
+            <a href="/"><span>THE BOOKSTORE NEFEMA</span></a>
+        </div>
+        <!-- --- MENU MOBILE --- -->                    
+        <div class="header-menu" id="appMain">
+            <div id="navbar-button">
+                <!-- --- BOTTON HAMBURGER --- -->                    
+                <button class="" @click="show_menu_mobile = !show_menu_mobile">                        
+                    <span class="top-line"></span>
+                    <span class="mid-line"></span>
+                    <span class="bottom-line"></span>
+                </button>
+                <!-- --- MENU OPTIONS --- -->                    
+                <div id="menu-mobile-options" v-show="show_menu_mobile">
+                    <li class="option-item"><strong><a href="/">HOME</a></strong></li>
+                    <li class="option-item"><strong><a href="/news">NEWS</a></strong></li>
+                    <li class="option-item"><strong><a href="/courses">COURSES</a></strong></li>
+                    <li class="option-item"><strong><a href="/portfolio">PORTFOLIO</a></strong></li>
+                    <li class="option-item"><strong><a href="/contact">CONTACT</a></strong></li>
+                </div> 
+
+            </div>
+        </div>
+        <!-- --- MENU COMPUTER --- -->                    
+        <div id="menu-pc-options">
+            <li class="option-item-pc"><strong><a href="/portfolio">PORTFOLIO</a></strong></li>                        
+            <li class="option-item-pc"><strong><a href="/news">NEWS</a></strong></li>
+            <li class="option-item-pc"><strong><a href="/courses">COURSES</a></strong></li>
+            <li class="option-item-pc"><strong><a href="/contact">CONTACT</a></strong></li>
+        </div>
+    </div>
+</header>
