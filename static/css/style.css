@@ -174,7 +174,15 @@ table {
 /* **************************************************
     FOOTER
 ************************************************* **/
-
+footer{
+    height: 70px;
+    background-color: var(--extralight-color);
+    color: var(--primary-color);
+}
+.footer-final{
+    text-align: center;
+    padding: 25px;
+}
 
 /* **************************************************
     ANIMATIONS 

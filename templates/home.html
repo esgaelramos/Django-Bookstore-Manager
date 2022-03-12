@@ -25,6 +25,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>API</th>
                         <th>Code</th>
                         <th>Book</th>
                         <th>Author</th>
@@ -39,6 +40,7 @@
                     {% for book in books %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
+                        <td><a href="/api/books/{{ book.slug }}">API</a></td>
                         <td>{{ book.code }}</td>
                         <td id="table-nombre">{{ book.book }}</td>
                         <td>{{ book.author }}</td>
