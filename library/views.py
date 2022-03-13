@@ -10,7 +10,7 @@ from .serializers import PostSerializer
 
 
 def home(request):
-    search = request.GET.get('buscar') #recuperamos la vista
+    search = request.GET.get('search') #recuperamos la vista
 
     booksList = Book.objects.all()
     authorsList = Author.objects.all()
@@ -33,6 +33,12 @@ def deleteBook(request, code):
     book.delete()
     
     return redirect('/')
+
+def literature(request):
+    return render(request, 'literature.html')
+
+def contact(request):
+    return render(request, 'contact.html')
 
 
 
