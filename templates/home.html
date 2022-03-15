@@ -36,24 +36,22 @@
                         <th>Price</th>
                         <th>Editorial</th>
                         <th>Genre</th>
-                        <th>Date</th>
                         <th colspan="2" id="opciones" >Options</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for book in books %}
                     <tr>
-                        <td>{{ forloop.counter }}</td>
-                        <td><a href="/api/books/{{ book.slug }}">API</a></td>
+                        <td class="center-table">{{ forloop.counter }}</td>
+                        <td class="center-table" id="api-table"><a href="/api/books/{{ book.slug }}">API</a></td>
                         <td>{{ book.code }}</td>
-                        <td id="table-nombre">{{ book.book }}</td>
+                        <td id="table-book">{{ book.book }}</td>
                         <td>{{ book.author }}</td>
-                        <td>${{ book.price }}</td>
+                        <td class="center-table">${{ book.price }}</td>
                         <td>{{ book.editorial }}</td>
-                        <td>{{ book.genre }}</td>
-                        <td>{{ book.published }}</td>
-                        <td><a href="admin/library/book/{{ book.code }}/change/" class="btn btn-info">Editar</a></td>
-                        <td><a href="deleteBook/{{ book.code }}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
+                        <td class="center-table">{{ book.genre }}</td>
+                        <td class="center-table link-edit"><a href="admin/library/book/{{ book.code }}/change/" class="btn btn-info">Editar</a></td>
+                        <td class="center-table link-edit" id="delete-link"><a href="deleteBook/{{ book.code }}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
                     </tr>    
                     {% endfor %}
                 </tbody>

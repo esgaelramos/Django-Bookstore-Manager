@@ -9,11 +9,14 @@
     --primary-color: #CED4F0;
     --header-color: #A1E6CD;
     --body-color: #000000;
+    --api-color: #237255;
+    --link-edit-color: #036468;
 }
 body{
     background-color: var(--background-color);
     font-family: 'Oswald', sans-serif;
     line-height: 1.19;
+    font-size: 19px;
 }
 a{
     text-decoration: none;
@@ -164,7 +167,22 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-
+td{
+    padding: 4px 0;
+}
+.center-table{
+    text-align: center;
+}
+#api-table a{
+    color: var(--link-edit-color);
+    text-decoration: underline;
+}
+.link-edit a{
+    color: var(--link-edit-color);
+}
+#delete-link a{
+    color: #ff2525;
+}
 /* **************************************************
     A
 ************************************************* **/
