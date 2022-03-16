@@ -13,8 +13,11 @@ urlpatterns = [
 
     path('deleteBook/<code>', views.deleteBook),
 
+    path('book/<book_slug>', views.book_detail, name='book_slug'),
+
     path('api/books/', BooksListView.as_view(), name='books-list'),
 
     path('api/books/<book_slug>', BookDetailView.as_view()),
+
 ]
 

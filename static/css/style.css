@@ -173,6 +173,10 @@ td{
 .center-table{
     text-align: center;
 }
+#table-book a{
+    color: var(--body-color);
+    text-decoration: underline;
+}
 #api-table a{
     color: var(--link-edit-color);
     text-decoration: underline;

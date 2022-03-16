@@ -45,7 +45,7 @@
                         <td class="center-table">{{ forloop.counter }}</td>
                         <td class="center-table" id="api-table"><a href="/api/books/{{ book.slug }}">API</a></td>
                         <td>{{ book.code }}</td>
-                        <td id="table-book">{{ book.book }}</td>
+                        <td id="table-book"><a href="book/{{ book.slug }}">{{ book.book }}</a></td>
                         <td>{{ book.author }}</td>
                         <td class="center-table">${{ book.price }}</td>
                         <td>{{ book.editorial }}</td>
