@@ -46,6 +46,10 @@ header{
     color: var(--extralight-color);
     font-weight: bold;
 }
+.header-title a span:hover{
+    color: var(--body-color);
+    text-decoration: underline;
+}
 /* --- MENU STATUS --- */
 .header-menu{
     display: none;
@@ -81,6 +85,7 @@ header{
 }
 .option-item a:hover{
     color: var(--body-color);
+    text-decoration: underline;
 } 
 /* --- COMPUTER MENU --- */
 .option-item-pc{
@@ -94,6 +99,7 @@ header{
 }
 .option-item-pc a:hover{
     color: var(--body-color);
+    text-decoration: underline;
 }
 /* --- HAMBURGER MENU --- */
 #header_navbar{
@@ -188,9 +194,11 @@ td{
     color: #ff2525;
 }
 /* **************************************************
-    A
+    BLOG CONTAINER
 ************************************************* **/
-
+.blog-container{
+    margin: 2rem;
+}
 
 
 /* **************************************************
@@ -297,13 +305,15 @@ footer{
 
 /* --- 700PX --- */
 @media (max-width: 700px){
-    /* --- MENU STATUS --- */
-
+    /* --- BLOG CONTAINER --- */
+    .blog-container{
+        margin: 0;
+    }
 }
 
 /* --- 500PX --- */
 @media (max-width: 500px){
-    /* --- MENU STATUS --- */
+
 }
 
 /* **************************************************
