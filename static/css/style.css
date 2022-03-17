@@ -169,7 +169,7 @@ table thead {
   color: #fff;
   font-size: 18px;
 }
-table {
+table{
   border-collapse: collapse;
   width: 100%;
 }
@@ -179,13 +179,22 @@ td{
 .center-table{
     text-align: center;
 }
+#code-table{
+    padding-left: 17px;
+}
 #table-book a{
     color: var(--body-color);
     text-decoration: underline;
 }
 #api-table a{
     color: var(--link-edit-color);
+}
+#api-table a:hover{
+    color: var(--link-edit-color);
     text-decoration: underline;
+}
+.link-edit{
+    padding: 0 7px;
 }
 .link-edit a{
     color: var(--link-edit-color);
@@ -193,11 +202,27 @@ td{
 #delete-link a{
     color: #ff2525;
 }
+.visibility-responsive{
+    display: block;
+}
+
 /* **************************************************
     BLOG CONTAINER
 ************************************************* **/
 .blog-container{
     margin: 2rem;
+}
+
+/* **************************************************
+    SEARCHER
+************************************************* **/
+.input-grup{
+    text-align: right;
+    margin-right: 20px;
+    margin-bottom: -65px;
+}
+.input-grup input{
+    width: 300px;
 }
 
 
@@ -287,7 +312,10 @@ footer{
 ************************************************* **/
 /* --- 900PX --- */
 @media (max-width: 900px){
-    /* --- H --- */    
+    /* --- VISIBILITY --- */
+    .visibility-responsive{
+        display: none;
+    }
 }
 
 /* --- 800PX --- */
@@ -301,19 +329,40 @@ footer{
     }
     #menu-pc-options{
         display: none;
-    }}
-
+    }
+}
 /* --- 700PX --- */
 @media (max-width: 700px){
+    body{
+        font-size: 17px;
+    }
     /* --- BLOG CONTAINER --- */
     .blog-container{
         margin: 0;
+    }
+    /* --- SEARCHER --- */
+    .input-grup{
+        text-align: center;
+        margin-top: -10px;
+        margin-bottom: -5px;
+    }
+    .input-grup input{
+        width: 300px;
     }
 }
 
 /* --- 500PX --- */
 @media (max-width: 500px){
+    .header-title a span{
+        font-size: 28px;
+    }
+    /* --- VISIBILITY --- */
+    .visibility-responsive-450{
+        display: none;
+    }
 
+    
+    
 }
 
 /* **************************************************

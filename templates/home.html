@@ -13,29 +13,25 @@
             <div class="searcher">
                 <form method="GET">
                     <div class="input-grup">
-                        <input type="text" placeholder="Buscar" name="search">
+                        <input type="text" placeholder="¿Qué libro buscas?" name="search">
                         <button type="submit"> 
                             Buscar
                         </button>
-                        <button type="reset" name="reset-search"> 
-                            Reset
-                        </button>
-
                     </div>
-                </form>    
+                </form>
             </div>
             <h1>Book List</h1>
             <table>
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>API</th>
-                        <th>Code</th>
+                        <th class="visibility-responsive-450">API</th>
+                        <th class="visibility-responsive">Code</th>
                         <th>Book</th>
                         <th>Author</th>
-                        <th>Price</th>
-                        <th>Editorial</th>
-                        <th>Genre</th>
+                        <th class="visibility-responsive-450">Price</th>
+                        <th class="visibility-responsive">Editorial</th>
+                        <th class="visibility-responsive-450">Genre</th>
                         <th colspan="2" id="opciones" >Options</th>
                     </tr>
                 </thead>
@@ -43,13 +39,13 @@
                     {% for book in books %}
                     <tr>
                         <td class="center-table">{{ forloop.counter }}</td>
-                        <td class="center-table" id="api-table"><a href="/api/books/{{ book.slug }}">API</a></td>
-                        <td>{{ book.code }}</td>
+                        <td class="center-table visibility-responsive-450" id="api-table"><a href="/api/books/{{ book.slug }}">API</a></td>
+                        <td class="visibility-responsive" id="code-table">{{ book.code }}</td>
                         <td id="table-book"><a href="book/{{ book.slug }}">{{ book.book }}</a></td>
                         <td>{{ book.author }}</td>
-                        <td class="center-table">${{ book.price }}</td>
-                        <td>{{ book.editorial }}</td>
-                        <td class="center-table">{{ book.genre }}</td>
+                        <td class="center-table visibility-responsive-450">${{ book.price }}</td>
+                        <td class="visibility-responsive">{{ book.editorial }}</td>
+                        <td class="center-table visibility-responsive-450">{{ book.genre }}</td>
                         <td class="center-table link-edit"><a href="admin/library/book/{{ book.code }}/change/" class="btn btn-info">Editar</a></td>
                         <td class="center-table link-edit" id="delete-link"><a href="deleteBook/{{ book.code }}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
                     </tr>    
