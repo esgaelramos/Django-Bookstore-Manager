@@ -8,6 +8,9 @@ from rest_framework.response import Response
 
 from .serializers import PostSerializer
 
+from barcode.writer import ImageWriter
+from barcode.ean import EuropeanArticleNumber13
+import barcode
 
 def home(request):
     search = request.GET.get('search') #recuperamos la vista
@@ -42,7 +45,12 @@ def contact(request):
 
 def book_detail(request, book_slug):
     book = get_object_or_404(Book, slug=book_slug)
-    return render(request, 'book_detail.html', {'book': book})
+
+    ean = EuropeanArticleNumber13(book.code, writer=ImageWriter())
+    
+    ean.save(book.code)
+
+    return render(request, 'book_detail.html', {'book': book, 'code': ean})
 
 class BooksListView(APIView):
     def get(self, request, *args, **kwargs):

@@ -2,7 +2,7 @@ from django.db import models
 
 def user_directory_path(instance, filename):
     return 'books/{0}/{1}'.format(instance.book, filename)
-
+    
 class Author(models.Model):
     first_name = models.CharField(max_length=30, blank=True, null=True)
     last_name = models.CharField(max_length=30)
@@ -53,7 +53,7 @@ class Book(models.Model):
     genre = models.CharField(max_length=20, choices=genres, default='Others')
 
     published = models.DateField(default='2000-04-23', blank=True, null=True)
-
+    
     code = models.CharField(primary_key=True, max_length=19) #Code in Final for a Better UX
 
     class Meta:

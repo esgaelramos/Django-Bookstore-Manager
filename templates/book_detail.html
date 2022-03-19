@@ -7,9 +7,27 @@
 
 {% block content %}
     <div class="books_container">
-        <h1>{{ book.book }}</h1>
-        {{ book.author }}
-        {{ book.editorial }}
-        {{ book.price }}
+        <h1>{{ book.book }}</h1><hr>
+            <h2>Writer by: {{ book.author }}</h2>
+            <h3>Details</h3>
+            <p>
+                Editorial: <strong>{{ book.editorial }}</strong>
+                <br>
+                Code: <strong>{{ book.code }}</strong>
+                <br>
+                <span id="api-link">
+                    See <a href="/api/books/{{ book.slug }}">REST API</a>, create with Django Rest Framework
+                </span>
+                <br>
+                Price: $ {{ book.price }}.99    
+            </p>
+            <h3>Description</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae neque alias optio numquam deserunt doloremque voluptates, officiis esse deleniti aliquid laudantium fugiat veritatis hic quod blanditiis sequi adipisci sed delectus.
+            </p>
+            <h3>ExtraNow</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae neque alias optio numquam deserunt doloremque voluptates, officiis esse deleniti aliquid laudantium fugiat veritatis hic quod blanditiis sequi adipisci sed delectus.
+            </p>
     </div>
 {% endblock %}

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="https://esgaelramos.xyz/assets/logo.ico" type="image/x-icon">       
     {% comment %} --- STYLES ---- {% endcomment %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
@@ -25,7 +26,18 @@
         
         {% comment %} --- INDEX INCLUDE ---- {% endcomment %}
         {% comment %} {% include 'partials/_index.html' %} {% endcomment %}
+        <section>
+            <br>
+            <div class="contact-container">
+                <a href="">
+                    <img src="https://esgaelramos.xyz/assets/github.svg" alt="" style="width: 70px;">
+                    <span>Ver Repositorio</span>
+                </a>            
+            </div>
+        <section>
     </main>
+
+
 
     {% comment %} --- FOOTER INCLUDE ---- {% endcomment %}
     {% include 'partials/_footer.html' %}

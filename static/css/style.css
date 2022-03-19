@@ -66,7 +66,7 @@ header{
 }
 #menu-mobile-options{
     display: none;
-    background-color: var(--primary-color);
+    background-color: var(--background-color);
     position: absolute;
     top: 50px;
     left: 0%;
@@ -205,6 +205,10 @@ td{
 .visibility-responsive{
     display: block;
 }
+#api-link a{
+    color: var(--api-color);
+    text-decoration: underline;
+}
 
 /* **************************************************
     BLOG CONTAINER
@@ -213,6 +217,57 @@ td{
     margin: 2rem;
 }
 
+
+/* **************************************************
+    BOOKS DETAILS CONTAINER
+************************************************* **/
+.books_container{
+    margin: 1rem;
+}
+.books_container h1{
+    line-height: 0.79;
+}
+.books_container h2{
+    line-height: 0.74;
+}
+.books_container h3{
+    line-height: 0.7;
+}
+
+/* **************************************************
+    CONTACT DETAILS CONTAINER
+************************************************* **/
+.contact_container{
+    margin: 1rem;
+}
+.contact_container h1{
+    line-height: 0.99;
+}
+.contact_container h2{
+    line-height: 0.94;
+}
+.contact_container h3{
+    line-height: 0.9;
+}
+.contacts-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.contact-container{
+    margin: 10px;
+    padding: 4px;
+    outline: 2px solid var(--api-color);
+    border-radius: 3px;
+}
+.contact-container span{
+    font-size: 30px;
+    position: relative;
+    top: -22px;
+    left: 10px;
+}
+.contact-container a{
+    color: var(--link-edit-color);
+}
 /* **************************************************
     SEARCHER
 ************************************************* **/
@@ -224,6 +279,10 @@ td{
 .input-grup input{
     width: 300px;
 }
+
+/* **************************************************
+    CONTACT
+************************************************* **/
 
 
 /* **************************************************
@@ -347,14 +406,20 @@ footer{
         margin-bottom: -5px;
     }
     .input-grup input{
-        width: 300px;
+        width: 240px;
     }
+    /* --- CONTACTS --- */
+    .contacts-container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
 }
 
 /* --- 500PX --- */
 @media (max-width: 500px){
     .header-title a span{
-        font-size: 28px;
+        font-size: 25px;
     }
     /* --- VISIBILITY --- */
     .visibility-responsive-450{
